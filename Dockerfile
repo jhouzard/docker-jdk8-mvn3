@@ -31,6 +31,7 @@ ENV downloadlink http://download.oracle.com/otn-pub/java/jdk/${JAVA_VERSION_MAJO
 # unpack java
 RUN wget --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" -O /tmp/$filename $downloadlink \
  && tar -zxf /tmp/$filename -C /opt/ \
+ && rm /tmp/$filename \
  && mv opt/jdk1.${JAVA_VERSION_MAJOR}.0_${JAVA_VERSION_MINOR} /opt/oracle-jdk-1.${JAVA_VERSION_MAJOR}.0_${JAVA_VERSION_MINOR} \
  && ln -s /opt/oracle-jdk-1.${JAVA_VERSION_MAJOR}.0_${JAVA_VERSION_MINOR} /opt/java
 
