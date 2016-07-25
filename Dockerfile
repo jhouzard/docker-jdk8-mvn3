@@ -37,3 +37,6 @@ RUN wget --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie
 
 ENV JAVA_HOME /opt/java
 ENV PATH $JAVA_HOME/bin:$MAVEN_HOME/bin:$PATH
+
+COPY ./wait-for-it.sh /
+RUN chmod +x /wait-for-it.sh
